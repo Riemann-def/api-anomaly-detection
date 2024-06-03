@@ -36,7 +36,7 @@ This project is a comprehensive simulation of API performance using Flask, with 
 3. Access the aplication: 
    * The API endpoints are available at http://localhost:5000/api/v1/endpoint1, http://localhost:5000/api/v1/endpoint2, and http://localhost:5000/api/v1/endpoint3.
    * Prometheus metrics are available at http://localhost:9090.
-   * Grafana dashboard is available at http://localhost:3000 (default login is admin/admin).
+   * Grafana dashboard is available at http://localhost:3003 (default login is admin/admin).
    * Locust UI for load testing is available at http://localhost:8089.
 
 # Using Locust for Load Testing
@@ -45,7 +45,7 @@ This project is a comprehensive simulation of API performance using Flask, with 
 
 # Accessing Grafana
 
-   1. Open Grafana at http://localhost:3000.
+   1. Open Grafana at http://localhost:3003.
    2. Login with username admin and password admin.
    3. Navigate to the provided dashboard to see real-time metrics and anomaly scores.
 

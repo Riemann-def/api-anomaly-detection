@@ -17,22 +17,20 @@ def main():
     prometheus_collector = PrometheusCollector(PROMETHEUS_URL, QUERIES)
     model_handler = ModelHandler('model.pkl')
     
-    # Crear una métrica Gauge para el score
+    # Create a Prometheus metric to store the anomaly score
     score_gauge = Gauge('anomaly_score', 'Anomaly score from the HST model, based on time responses')
 
-    # Iniciar el servidor HTTP de Prometheus
+    # HTTP server for Prometheuss
     start_http_server(8000)
 
     while True:
         metrics = prometheus_collector.fetch_data()
         if metrics:
             features = metrics
-            print(features)
-            # Calcular el score
             score = model_handler.calculate_score(features)
             model_handler.learn_one(features)
             
-            # Actualizar el valor de la métrica de score
+            # Set the anomaly score in the Prometheus metric
             score_gauge.set(score)
         else:
             print("No metrics fetched. Skipping this cycle.")

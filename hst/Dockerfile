@@ -13,4 +13,4 @@ COPY model.pkl .
 
 EXPOSE 8000
 
-CMD ["python", "-u", "exporter.py"]
+CMD ["python", "exporter.py"]

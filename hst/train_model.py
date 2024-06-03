@@ -10,7 +10,7 @@ def simulate_data():
         endpoint2_time = random.uniform(0.27, 0.33)
         endpoint3_time = random.uniform(0.37, 0.43)
         
-        # Introducir anomalías artificiales
+        # Artificially introduce an anomaly
         if i % 200 == 0:
             endpoint1_time = random.uniform(0.5, 1.0)
             endpoint2_time = random.uniform(0.5, 1.0)
@@ -26,7 +26,7 @@ def train_and_save_model():
         anomaly.HalfSpaceTrees(
             n_trees=5,
             height=3,
-            window_size=3,  # Incrementar el tamaño de la ventana
+            window_size=3,  
             seed=10
         )
     )
