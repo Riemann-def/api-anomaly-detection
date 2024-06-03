@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+
+  - job_name: 'flask'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['flask-app:5000']
+      
+  - job_name: 'hst'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['hst-service:8000']

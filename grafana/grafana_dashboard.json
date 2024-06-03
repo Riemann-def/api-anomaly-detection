@@ -1,0 +1,447 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "Flask",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": 9688,
+    "graphTooltip": 0,
+    "id": 2,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "orange",
+              "mode": "fixed"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 30,
+              "gradientMode": "opacity",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 15,
+          "x": 0,
+          "y": 0
+        },
+        "id": 16,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "adnny3kee3tvkb"
+            },
+            "editorMode": "code",
+            "expr": "rate(flask_http_request_duration_seconds_sum{path=\"/api/v1/endpoint1\", status='200'}[30s])\r\n/\r\nrate(flask_http_request_duration_seconds_count{path=\"/api/v1/endpoint1\", status='200'}[30s])",
+            "instant": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Endpoint1 response time [30s]",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-GrYlRd"
+            },
+            "mappings": [],
+            "max": 1,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 24,
+          "w": 9,
+          "x": 15,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "displayMode": "basic",
+          "maxVizHeight": 300,
+          "minVizHeight": 16,
+          "minVizWidth": 0,
+          "namePlacement": "auto",
+          "orientation": "vertical",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true,
+          "sizing": "auto",
+          "text": {
+            "titleSize": 100,
+            "valueSize": 60
+          },
+          "valueMode": "color"
+        },
+        "pluginVersion": "10.4.2",
+        "targets": [
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "editorMode": "code",
+            "expr": "anomaly_score",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "{{ path }}",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Anomaly Score",
+        "transparent": true,
+        "type": "bargauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "blue",
+              "mode": "fixed"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 30,
+              "gradientMode": "opacity",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "min": 0.2,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 15,
+          "x": 0,
+          "y": 7
+        },
+        "id": 14,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "adnny3kee3tvkb"
+            },
+            "editorMode": "code",
+            "expr": "rate(flask_http_request_duration_seconds_sum{path=\"/api/v1/endpoint2\", status='200'}[30s])\r\n/\r\nrate(flask_http_request_duration_seconds_count{path=\"/api/v1/endpoint2\", status='200'}[30s])",
+            "instant": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Endpoint2 response time [30s]",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "yellow",
+              "mode": "fixed"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 30,
+              "gradientMode": "opacity",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "min": 0.3,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 15,
+          "x": 0,
+          "y": 15
+        },
+        "id": 15,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "adnny3kee3tvkb"
+            },
+            "editorMode": "code",
+            "expr": "rate(flask_http_request_duration_seconds_sum{path=\"/api/v1/endpoint3\", status='200'}[30s])\r\n/\r\nrate(flask_http_request_duration_seconds_count{path=\"/api/v1/endpoint3\", status='200'}[30s])",
+            "instant": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Endpoint3 response time [30s]",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "auto",
+    "schemaVersion": 39,
+    "tags": [
+      "flask"
+    ],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "prometheus",
+            "value": "adnny3kee3tvkb"
+          },
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "datasource",
+          "options": [],
+          "query": "prometheus",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "type": "datasource"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-5m",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "3s"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "",
+    "title": "flask transaction",
+    "uid": "u_DVKhQiz",
+    "version": 6,
+    "weekStart": ""
+  }
